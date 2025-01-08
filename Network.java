@@ -88,7 +88,10 @@ public class Network {
                 count = followeeCount(users[i].getName());
             }
         }
-        return mostpopular.getName();
+        if (mostpopular == null) {
+            return "null";
+        }
+        else return mostpopular.getName();
     }
 
     /** Returns the number of times that the given name appears in the follows lists of all
@@ -105,9 +108,9 @@ public class Network {
 
     // Returns a textual description of all the users in this network, and who they follow.
     public String toString() {
-        String ans = "Network:\n";
+        String ans = "Network:";
         for(int i=0; i<userCount; i++) {
-             ans = ans + users[i].toString() + "\n";
+             ans = ans + "\n" + users[i].toString();
         }
        return ans;
     }
